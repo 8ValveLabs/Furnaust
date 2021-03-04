@@ -2,7 +2,8 @@ package com.programax.furnaust.Abstract;
 
 import java.util.ArrayList;
 
-public abstract class Furnace {
+public abstract class Furnace
+{
     public byte slots;
     public short maxStackSize = 1000;
     public String imgResource;

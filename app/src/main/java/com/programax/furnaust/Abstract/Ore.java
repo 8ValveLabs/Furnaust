@@ -1,6 +1,7 @@
 package com.programax.furnaust.Abstract;
 
-public abstract class Ore {
+public abstract class Ore
+{
     public short maxStackSize = 1000;
     private double smeltRate;
 

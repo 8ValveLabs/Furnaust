@@ -4,8 +4,18 @@ import com.programax.furnaust.Abstract.Ore;
 
 public class SulfurOre extends Ore
 {
-    public SulfurOre(double smeltRate)
+    public SulfurOre()
     {
-        super(smeltRate);
+        super(2.5);
+    }
+
+    @Override
+    public double calcWoodConsumed(short ore) {
+        return 0;
+    }
+
+    @Override
+    public double calcOreConsumed(short wood) {
+        return 0;
     }
 }

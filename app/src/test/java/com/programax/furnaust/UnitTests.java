@@ -65,8 +65,8 @@ public class UnitTests {
     @Test
     public void calcOre_Crude_isAccurate() {
         assertEquals(
-                1,
-                crude.calcOreConsumed((short)7),
+                2,
+                crude.calcOreConsumed((short)13),
                 0.1
         );
     }
@@ -74,8 +74,8 @@ public class UnitTests {
     @Test
     public void calcOre_Hqm_isAccurate() {
         assertEquals(
-                1,
-                hqm.calcOreConsumed((short)7),
+                2,
+                hqm.calcOreConsumed((short)20),
                 0.1
         );
     }
@@ -83,8 +83,8 @@ public class UnitTests {
     @Test
     public void calcOre_Metal_isAccurate() {
         assertEquals(
-                1,
-                metal.calcOreConsumed((short)7),
+                2,
+                metal.calcOreConsumed((short)10),
                 0.1
         );
     }
@@ -92,8 +92,8 @@ public class UnitTests {
     @Test
     public void calcOre_Sulfur_isAccurate() {
         assertEquals(
-                1,
-                sulfur.calcOreConsumed((short)7),
+                2,
+                sulfur.calcOreConsumed((short)5),
                 0.1
         );
     }
@@ -139,6 +139,42 @@ public class UnitTests {
         );
     }
 
+    @Test
+    public void calcOre_CrudeOil_zeroCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    crude.calcOreConsumed((short) 0);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_Hqm_zeroCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    hqm.calcOreConsumed((short) 0);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_Metal_zeroCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    metal.calcOreConsumed((short) 0);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_Sulfur_zeroCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    sulfur.calcOreConsumed((short) 0);
+                }
+        );
+    }
+
     /**
      *  Beginning of negative value checks
      */
@@ -175,6 +211,42 @@ public class UnitTests {
         assertThrows(
                 IllegalArgumentException.class, () -> {
                     sulfur.calcWoodConsumed((short) -5);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_CrudeOil_negativeCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    crude.calcOreConsumed((short) -5);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_Hqm_negativeCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    hqm.calcOreConsumed((short) -5);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_Metal_negativeCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    metal.calcOreConsumed((short) -5);
+                }
+        );
+    }
+
+    @Test
+    public void calcOre_sulfur_negativeCheck() {
+        assertThrows(
+                IllegalArgumentException.class, () -> {
+                    sulfur.calcOreConsumed((short) -5);
                 }
         );
     }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class LargeFurnace extends Furnace
 {
-    public LargeFurnace(byte slots, String imgResource, ArrayList<Ore> allowedOres)
+    public LargeFurnace(byte slots, String imgResource, Ore [] allowedOres)
     {
         super(slots, imgResource, allowedOres);
     }

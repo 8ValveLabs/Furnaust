@@ -6,7 +6,7 @@ import java.math.RoundingMode;
 public abstract class Ore
 {
     public short maxStackSize = 1000;
-    private double smeltRate;
+    private final double smeltRate;
 
     public Ore(short maxStackSize, double smeltRate)
     {

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class OilRefinery extends Furnace
 {
-    public OilRefinery(byte slots, String imgResource, ArrayList<Ore> allowedOres)
+    public OilRefinery(byte slots, String imgResource, Ore [] allowedOres)
     {
         super(slots, imgResource, allowedOres);
     }

@@ -9,12 +9,4 @@ public class HqmOre extends Ore
         super(10.0);
     }
 
-    public double calcWoodConsumed(short ore)
-    {
-        return 0.0;
-    }
-    public double calcOreConsumed(short wood)
-    {
-        return 0.0;
-    }
 }

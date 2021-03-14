@@ -9,13 +9,4 @@ public class MetalOre extends Ore
         super(5.0);
     }
 
-    @Override
-    public double calcWoodConsumed(short ore) {
-        return 0;
-    }
-
-    @Override
-    public double calcOreConsumed(short wood) {
-        return 0;
-    }
 }

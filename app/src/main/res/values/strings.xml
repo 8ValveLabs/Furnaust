@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Furnaust</string>
+    <string name="small_furnace">Small Furnace</string>
+    <string name="ore_type">Selected Ore Type :</string>
+    <string name="default_ore_type">Sulfur</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

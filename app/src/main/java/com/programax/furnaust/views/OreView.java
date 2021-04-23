@@ -1,20 +1,13 @@
 package com.programax.furnaust.views;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.view.View;
-import android.widget.ImageView;
 
-import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -29,11 +22,22 @@ public class OreView extends androidx.appcompat.widget.AppCompatImageView {
     public OreView(@NonNull Context context) {
         super(context);
         init();
+        count = 0000;
     }
 
     public OreView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
+        TypedArray attrs_arr = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.OreView,
+                0,0);
+        try {
+            count = attrs_arr.getInt(R.styleable.OreView_count_label, 0);
+        }
+        finally {
+            attrs_arr.recycle();
+        }
     }
 
     public OreView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -41,6 +45,15 @@ public class OreView extends androidx.appcompat.widget.AppCompatImageView {
         init();
     }
 
+    public void setCount(int count){
+        this.count = count;
+        invalidate();
+        requestLayout();
+    }
+
+    public int getCount() {
+        return this.count;
+    }
 
     private void init() {
         ore_paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -60,7 +73,7 @@ public class OreView extends androidx.appcompat.widget.AppCompatImageView {
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawText("0000", 15, 50, ore_paint);
+        canvas.drawText(String.valueOf(count), 15, 50, ore_paint);
 
     }
 }

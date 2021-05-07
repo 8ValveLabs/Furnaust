@@ -2,13 +2,18 @@ package com.programax.furnaust;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import android.widget.GridLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.programax.furnaust.views.OreView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,14 +27,21 @@ public class FragmentGrid extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    private OreView[] OreViews;
+    private GridLayout bounds;
+    private ArrayList<OreView> OreViews;
 
 
-    public void ChangeToSmall()
+    private ArrayList<OreView> ChangeLayout(int GridSize)
     {
-        for (OreView ore: OreViews) {
-
-        };
+        OreViews = new ArrayList<OreView>(GridSize+1);
+        OreView ore;
+        for (int ctr = 0; ctr < GridSize; ctr++){
+            ore = new OreView(getContext());
+            ore.setImageResource(R.drawable.empty_grid);
+            bounds.addView(ore);
+            OreViews.add(ore);
+        }
+        return OreViews;
     }
 
     public FragmentGrid() {
@@ -63,11 +75,19 @@ public class FragmentGrid extends Fragment {
         }
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        bounds = getView().findViewById(R.id.bounds);
+        OreViews = ChangeLayout(18);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_grid, container, false);
+
     }
 }

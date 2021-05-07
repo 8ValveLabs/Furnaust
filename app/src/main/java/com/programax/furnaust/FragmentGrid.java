@@ -8,23 +8,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.programax.furnaust.views.OreView;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_grid#newInstance} factory method to
+ * Use the {@link FragmentGrid#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_grid extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
+public class FragmentGrid extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private OreView[] OreViews;
 
-    public fragment_grid() {
+
+    public void ChangeToSmall()
+    {
+        for (OreView ore: OreViews) {
+
+        };
+    }
+
+    public FragmentGrid() {
         // Required empty public constructor
     }
 
@@ -37,8 +45,8 @@ public class fragment_grid extends Fragment {
      * @return A new instance of fragment fragment_grid.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_grid newInstance(String param1, String param2) {
-        fragment_grid fragment = new fragment_grid();
+    public static FragmentGrid newInstance(String param1, String param2) {
+        FragmentGrid fragment = new FragmentGrid();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,6 +62,7 @@ public class fragment_grid extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

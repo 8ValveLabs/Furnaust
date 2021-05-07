@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:columnCount="6"
     android:fitsSystemWindows="false"
-    tools:context=".fragment_grid">
+    tools:context=".FragmentGrid">
 
     <com.programax.furnaust.views.OreView
         android:id="@+id/ore_1"

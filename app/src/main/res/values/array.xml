@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="list_furnace_types">
+        <item>
+            <string>Small Furnace</string>
+        </item>
+        <item>
+            <string>Large Furnace</string>
+        </item>
+        <item>
+            <string>Oil Refinery</string>
+        </item>
+    </array>
+</resources>

@@ -5,4 +5,6 @@
     <string name="default_ore_type">Sulfur</string>
     <string name="default_ore_count">0</string>
     <string name="contentDesc_ore_view">Ore Placeholder</string>
+    <string name="change_layout_button_label">Change Furnace</string>
+    <string name="change_ore_button_label">Change Ore</string>
 </resources>

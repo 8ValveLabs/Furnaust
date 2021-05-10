@@ -31,10 +31,11 @@ public class FragmentGrid extends Fragment {
     private ArrayList<OreView> OreViews;
 
 
-    private ArrayList<OreView> ChangeLayout(int GridSize)
+    public ArrayList<OreView> ChangeLayout(int GridSize)
     {
         OreViews = new ArrayList<OreView>(GridSize+1);
         OreView ore;
+        bounds.removeAllViews();
         for (int ctr = 0; ctr < GridSize; ctr++){
             ore = new OreView(getContext());
             ore.setImageResource(R.drawable.empty_grid);
